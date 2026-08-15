@@ -100,7 +100,7 @@ The full boundary is described in [docs/OPEN_SOURCE_SCOPE.md](./docs/OPEN_SOURCE
 
 ## Release Policy
 
-Soulmate ships releases as a **four-endpoint release transaction** with a **single version source** and a **fixed order** (Local → CN Website → GitHub → Overseas Website). Every endpoint must pass **machine verification** before the next one starts, and any failure triggers a per-endpoint **rollback** — see [docs/RELEASE_POLICY.md](./docs/RELEASE_POLICY.md) for the full public summary. The overseas website is currently **SKIPPED_NOT_OPEN / 未开放** and no release action is performed, simulated, or stubbed until it opens.
+Soulmate ships releases as a **four-endpoint release transaction** with a fixed order (Local → paired content hot update when applicable → CN Website → GitHub → Overseas Website). Client hot update is a mandatory delivery track inside the transaction, not a fifth endpoint: the same change must pass machine verification on both paired content channels, and either-side failure rolls both manifests back. Documentation-only or website-only changes are recorded as **NOT_APPLICABLE_DOCS_ONLY**; empty update bundles are forbidden. See [docs/RELEASE_POLICY.md](./docs/RELEASE_POLICY.md) for the full public summary. The overseas website is currently **SKIPPED_NOT_OPEN / 未开放** and no release action is performed, simulated, or stubbed until it opens.
 
 ## Community
 

@@ -17,22 +17,25 @@
 | GitHub | OPEN | 社区与运营入口，不发布产品源码 |
 | 国外官网 / Overseas Website | **SKIPPED_NOT_OPEN / 未开放** | 尚无域名、账号与部署入口；开放前不执行、不模拟、不占位任何发布动作 |
 
-固定顺序：**本地 → 国内官网 → GitHub → 国外官网**。前一步未通过机器验收，不得进入下一步；顺序不可调换、不可跳跃。
+固定顺序：**本地 → 双内容热更新（适用时）→ 国内官网 → GitHub → 国外官网**。热更新是事务内的强制交付轨道，不是第五端；前一步未通过机器验收，不得进入下一步。
 
-Fixed order: **Local → CN Website → GitHub → Overseas Website**. The next step cannot start until the previous one passes machine verification; the order cannot be swapped or skipped.
+Fixed order: **Local → paired content hot update (when applicable) → CN Website → GitHub → Overseas Website**. Hot update is a mandatory delivery track, not a fifth endpoint. The next step cannot start until the previous one passes machine verification.
 
 ## 唯一版本源 / Single Source of Version
 
-- 每次发布只允许一个版本号，所有端点对外展示的版本号来自同一个唯一版本源。
-- 禁止临时改号、拼号或复用旧号；同一版本号只能属于一次发布事务。
-- Each release carries exactly one version number, sourced from a single version source across all endpoints. No ad-hoc changes, splicing, or reuse of old numbers; the same version number belongs to exactly one release transaction.
+- 每次整包发布只允许一个对外版本号，所有端点来自同一个唯一版本源。
+- 配对内容通道各自维护严格递增的内容版本号，并由同一变更记录关联；数字不要求相同。
+- Each full release has one public version from a single source. Paired content channels keep independently increasing content versions linked by one change record; the numbers do not need to match.
 
 ## 固定顺序 / Fixed Order
 
-1. **本地 / Local** — 构建并本地校验产物；
-2. **国内官网 / CN Website** — 版本与下载入口同步为同一版本；
-3. **GitHub** — 同步公开文档（社区与运营信息，不发布产品源码）；
-4. **国外官网 / Overseas Website** — 当前固定为 `SKIPPED_NOT_OPEN / 未开放`，如实登记为未开放、跳过。
+1. **本地 / Local** — 判定交付模式，构建并本地校验产物；
+2. **双内容热更新 / Paired content hot update（适用时 / when applicable）** — 同一变更两边发布并机器回读；任一边失败则整体失败并成对回滚；
+3. **国内官网 / CN Website** — 版本与下载入口同步为同一版本；
+4. **GitHub** — 同步公开文档（社区与运营信息，不发布产品源码）；
+5. **国外官网 / Overseas Website** — 当前固定为 `SKIPPED_NOT_OPEN / 未开放`，如实登记为未开放、跳过。
+
+纯文档或官网变更登记 `NOT_APPLICABLE_DOCS_ONLY`，禁止为了凑同步发布空内容包。Documentation-only or website-only changes are recorded as `NOT_APPLICABLE_DOCS_ONLY`; empty update bundles are forbidden.
 
 ## 公开边界 / Public Boundary
 
@@ -42,21 +45,21 @@ Public documents must not contain: local machine paths, internal addresses, serv
 
 ## 验收 / Verification
 
-每个端点推进后必须通过机器验收（不是目测收工）；任一已开放端点失败，本次发布整体视为失败，不对外通知。
+每个端点及适用的双内容热更新都必须通过机器验收（不是目测收工）；任一已开放端点或任一热更新侧失败，本次发布整体视为失败，不对外通知。
 
-Every endpoint must pass machine verification after advancing (no eyeballing). Failure of any open endpoint fails the whole release without public notice.
+Every endpoint and each applicable hot-update side must pass machine verification (no eyeballing). Failure of any open endpoint or either hot-update side fails the whole release without public notice.
 
 ## 失败回滚 / Rollback
 
-按端点回滚：国内官网按页面、配置、下载别名与更新通道的备份还原；GitHub 仅还原公开文档；国外官网未开放，无回滚动作。回滚动作同样需要登记。
+按端点回滚；双内容热更新必须成对恢复两份清单，禁止只回滚一边；GitHub 仅还原公开文档；国外官网未开放，无回滚动作。回滚动作同样需要登记。
 
-Rollback is per endpoint: CN website restores from page / configuration / download alias / update-channel backups; GitHub restores public documents only; the overseas website has no rollback since it is not open. Rollback actions are also recorded.
+Rollback is per endpoint. Paired hot updates restore both manifests together, never one side only. GitHub restores public documents only; the overseas website has no rollback while closed. Rollback actions are also recorded.
 
 ## 发布记录 / Release Records
 
-每次发布登记：版本号、时间、操作人、各端点状态、验收结果与回滚记录。没有记录的发布视为未发布。
+每次发布登记：交付模式、版本号、配对内容通道状态与清单哈希、时间、操作人、各端点状态、验收结果与回滚记录。没有记录的发布视为未发布。
 
-Each release records: version, time, operator, per-endpoint status, verification results, and rollback notes. A release without a record is not a release.
+Each release records: delivery mode, versions, paired-channel status and manifest hashes, time, operator, endpoint states, verification results, and rollback notes. A release without a record is not a release.
 
 ---
 
