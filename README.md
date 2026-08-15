@@ -14,6 +14,11 @@
 </p>
 
 <p align="center">
+  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/QilingSoulmate-PublicBeta-Setup-latest.exe"><img alt="Download for Windows / Latest Public Beta" src="https://img.shields.io/badge/Download%20for%20Windows-Latest%20Public%20Beta-0078D4?style=for-the-badge&amp;logo=windows11&amp;logoColor=white" /></a><br />
+  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/latest.yml">Latest Windows public beta</a>
+</p>
+
+<p align="center">
   <a href="https://qiling.swcbg.com">Website</a> ·
   <a href="docs/ROADMAP.md">Roadmap</a> ·
   <a href="https://github.com/Soulmate-Halo/qiling-soulmate/issues">Issues</a> ·
@@ -94,6 +99,7 @@ The steps above describe the product's working philosophy. The internal implemen
 
 Soulmate is a commercial desktop product — this repository is its community and operations entry point, not a source distribution.
 
+- **Download for Windows** — get the [latest public beta installer](https://webcon.swcbg.com/qiling-soulmate-beta-update/QilingSoulmate-PublicBeta-Setup-latest.exe)
 - **Learn about the product** — visit the official website: <https://qiling.swcbg.com>
 - **Understand the boundary** — read [docs/OPEN_SOURCE_SCOPE.md](./docs/OPEN_SOURCE_SCOPE.md) to see what this repository opens and what stays closed
 - **See the public roadmap** — read [docs/ROADMAP.md](./docs/ROADMAP.md)
@@ -125,7 +131,7 @@ We welcome documentation improvements, feedback, and collaboration — but pleas
 - **Discussions** — share experiences and discuss directions
 - **Pull Requests** — read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening one, and use the [PR template](./.github/PULL_REQUEST_TEMPLATE.md)
 
-Please do **not** submit product core source code, keys, credentials, internal server information, or download links in this repository.
+Please do **not** submit product core source code, keys, credentials, internal server information, or unverified third-party download links in this repository.
 
 ## Links
 

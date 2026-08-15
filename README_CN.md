@@ -14,6 +14,11 @@
 </p>
 
 <p align="center">
+  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/QilingSoulmate-PublicBeta-Setup-latest.exe"><img alt="下载 Windows 安装包 / 最新公测版" src="https://img.shields.io/badge/%E4%B8%8B%E8%BD%BD%20Windows%20%E5%AE%89%E8%A3%85%E5%8C%85-%E6%9C%80%E6%96%B0%E5%85%AC%E6%B5%8B%E7%89%88-0078D4?style=for-the-badge&amp;logo=windows11&amp;logoColor=white" /></a><br />
+  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/latest.yml">Windows 最新公测版</a>
+</p>
+
+<p align="center">
   <a href="https://qiling.swcbg.com">官方网站</a> ·
   <a href="docs/ROADMAP.md">路线图</a> ·
   <a href="https://github.com/Soulmate-Halo/qiling-soulmate/issues">Issues</a> ·
@@ -89,6 +94,7 @@ flowchart LR
 
 器灵 Soulmate 是闭源商业桌面产品——本仓库是它的社区与运营入口，不是源码分发处。
 
+- **下载 Windows 安装包**：获取[最新公测版安装程序](https://webcon.swcbg.com/qiling-soulmate-beta-update/QilingSoulmate-PublicBeta-Setup-latest.exe)
 - **了解产品**：访问官方网站 <https://qiling.swcbg.com>
 - **了解边界**：阅读 [docs/OPEN_SOURCE_SCOPE.md](./docs/OPEN_SOURCE_SCOPE.md) 查看本仓库开放什么、不开放什么
 - **查看公开路线图**：阅读 [docs/ROADMAP.md](./docs/ROADMAP.md)
@@ -120,7 +126,7 @@ flowchart LR
 - **Discussions**：分享使用经验、讨论方向
 - **Pull Requests**：提交前请先阅读 [CONTRIBUTING.md](./CONTRIBUTING.md)，并使用 [PR 模板](./.github/PULL_REQUEST_TEMPLATE.md)
 
-请勿在本仓库提交产品核心源码、密钥、凭据、内部服务器信息或下载链接。
+请勿在本仓库提交产品核心源码、密钥、凭据、内部服务器信息或未经核验的第三方下载链接。
 
 ## 相关链接
 
