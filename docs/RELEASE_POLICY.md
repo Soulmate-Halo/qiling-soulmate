@@ -37,6 +37,18 @@ Fixed order: **Local → paired content hot update (when applicable) → CN Webs
 
 纯文档或官网变更登记 `NOT_APPLICABLE_DOCS_ONLY`，禁止为了凑同步发布空内容包。Documentation-only or website-only changes are recorded as `NOT_APPLICABLE_DOCS_ONLY`; empty update bundles are forbidden.
 
+## 铁律 8：三渠道同步更新 / Iron Rule 8: Three-Channel Synchronized Update
+
+三渠道定义为**内部内容通道**、**Soulmate 内容通道**与 **GitHub 公开仓库**，固定顺序为：**内部内容通道 → Soulmate 内容通道 → GitHub 公开仓库**。任何客户端内容热更新或整包发布都必须在同一事务内推进三条渠道，不得调换或跳过。
+
+The three channels are the **internal content channel**, **Soulmate content channel**, and **public GitHub repository**, in this fixed order: **internal content channel → Soulmate content channel → public GitHub repository**. Every client content hot update or full release advances all three in one transaction without reordering or skipping.
+
+三条渠道全部成功才允许机器断言 `THREE_CHANNEL_SYNC=PASS`；任一渠道失败则整体断言 `THREE_CHANNEL_SYNC=FAIL`，两条内容清单一起回滚，GitHub 公开文档还原上一版，并禁止对外通知。
+
+Only complete success may assert `THREE_CHANNEL_SYNC=PASS`. Any channel failure asserts `THREE_CHANNEL_SYNC=FAIL`, rolls back both content manifests together, restores the previous public GitHub documents, and blocks public notice.
+
+GitHub 必须留下公开发布说明，写明两条内容版本号与面向用户的行为变化。GitHub must retain a public release note stating both content versions and the user-visible behavior changes.
+
 ## 公开边界 / Public Boundary
 
 公开文档（国内官网、GitHub、未来的国外官网）不得包含：本机路径、内网地址、服务器与部署细节、密钥、闭源实现与更新源内部细节。
