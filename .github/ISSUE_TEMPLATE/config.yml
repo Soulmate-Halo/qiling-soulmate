@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 官方网站 / Official Website
+    url: https://qiling.swcbg.com
+    about: 器灵 Soulmate 产品与信息入口。
+  - name: 社区讨论 / Discussions
+    url: https://github.com
+    about: 分享使用经验、参与方向讨论（本仓库启用 Discussions 后生效）。

@@ -1,0 +1,51 @@
+name: Bug 报告
+description: 报告你遇到的问题，帮助我们改进器灵 Soulmate
+title: "[Bug] 简要描述问题"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你反馈问题！请尽量提供完整信息，便于我们快速定位。本仓库是社区与运营入口，**请勿在此提交产品核心源码、密钥、账号或内部服务器信息**。
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 清楚、简洁地描述遇到的问题是什么。
+      placeholder: 例如：在某个操作下出现了异常行为……
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请描述一步步触发该问题的操作过程。
+      placeholder: |
+        1. 打开……
+        2. 点击……
+        3. 观察到……
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为
+      description: 你期望应该发生什么。
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为
+      description: 实际发生了什么（可附截图、日志片段）。
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "> ⚠️ 若涉及安全漏洞，请**不要**在此公开提交，改走我们的私密报告渠道（见 [SECURITY.md](../../SECURITY.md)）。"
+  - type: input
+    id: contact
+    attributes:
+      label: 联系信息（可选）
+      description: 你的联系方式（如邮箱或社交账号），便于我们私下跟进。
+      placeholder: "（可选）"
