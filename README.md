@@ -22,6 +22,11 @@
 
 ---
 
+<!-- maintenance-20260815-savings -->
+## Latest maintenance update
+
+- **2026-08-15:** Fixed per-turn savings visibility and sub-agent accounting after task completion. Pricing formulas and display precision are unchanged.
+
 ## A note from the author
 
 I am an independent developer. The AI era gave me a lot of inspiration and made development unprecedentedly efficient; but the high subscription fees and API costs kept bothering me. Every time a new model appeared, I almost had to subscribe to another service, and the old subscription was soon left idle. I also deployed many models locally, but apart from being free, they struggled to be useful in real development work.
