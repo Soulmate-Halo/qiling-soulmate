@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Strong models as the brain, weak models as the hands — multiple Agent CLIs in one workbench.</strong><br />
-  Either fast, either accurate, or economical.
+  Choose one: fast, accurate, or economical.
 </p>
 
 <p align="center">
@@ -30,9 +30,25 @@ Its core idea is simple: **strong models do the thinking, weak models do the leg
 
 Soulmate runs as a desktop application and works directly on your machine, including browser automation via CDP / Selenium / Playwright.
 
-## Three routes: Fast · Accurate · Economical
+## A note from the author
 
-Soulmate's orchestration philosophy balances three emphases — choose whichever fits the job. The numbers below are **product-side estimates from the official website scenarios**, not customer testimonials or universal promises.
+I am an independent developer. The AI era gave me a lot of inspiration and made development unprecedentedly efficient; but the high subscription fees and API costs kept bothering me. Every time a new model appeared, I almost had to subscribe to another service, and the old subscription was soon left idle. I also deployed many models locally, but apart from being free, they struggled to be useful in real development work.
+
+So I kept breaking down the differences between strong and weak models on tool calls, file reading and other metrics. In the end I reached a conclusion: **let the strong model be the brain — decomposing tasks, judging direction and doing final verification; let the weak model be the hands — file reading, retrieval, repetitive execution and bulk output.** I built this Agent CLI, and after countless rounds of testing and rule fixes, this collaboration finally worked.
+
+With the compression rules I designed — I call it 器灵压缩 (Qiling Compression) — the combination of main and collaborative models can greatly reduce the main model's consumption while keeping precision; in some tasks, speed and result quality even exceed the strong model working alone. I also connected the CLIs I commonly use into the same workbench, keeping the collaborative gains while preserving my original habits. If you are a heavy user of AI Agents, you are welcome to join me and raise a Qiling (器灵) of your own.
+
+## Choose one route: Fast · Accurate · Economical
+
+> **Choose exactly one route.** Pick the single route that fits your current primary goal — the three are not enabled at the same time, nor run one after another.
+
+| Route | When to pick it | Primary goal |
+| --- | --- | --- |
+| **Fast** | The job is taking too long | Speed it up |
+| **Accurate** | The result must be reliable | Raise quality |
+| **Economical** | The cost is too high | Spend less |
+
+Pick **one** route per task, according to your current primary goal. The numbers below are **product-side estimates from the official website scenarios**, not customer testimonials or universal promises.
 
 ### Fast — scout the big repo first, then let the strong model act
 
@@ -54,13 +70,7 @@ Mechanical steps such as retrieval, scanning, drafting and testing are handed to
 
 For conversation baselines, the official website estimates savings of **8–25%** for short dialogues (1–3 effective rounds), **35–64%** for multi-round dialogues (4–14 effective rounds), and **51–82%** for long dialogues (15+ effective rounds). All figures are product-side estimates under fixed assumptions, not guarantees; real results vary with model, pricing, cache and task structure.
 
-## A note from the author
-
-I am an independent developer. The AI era gave me a lot of inspiration and made development unprecedentedly efficient; but the high subscription fees and API costs kept bothering me. Every time a new model appeared, I almost had to subscribe to another service, and the old subscription was soon left idle. I also deployed many models locally, but apart from being free, they struggled to be useful in real development work.
-
-So I kept breaking down the differences between strong and weak models on tool calls, file reading and other metrics. In the end I reached a conclusion: **let the strong model be the brain — decomposing tasks, judging direction and doing final verification; let the weak model be the hands — file reading, retrieval, repetitive execution and bulk output.** I built this Agent CLI, and after countless rounds of testing and rule fixes, this collaboration finally worked.
-
-With the compression rules I designed — I call it 器灵压缩 (Qiling Compression) — the combination of main and collaborative models can greatly reduce the main model's consumption while keeping precision; in some tasks, speed and result quality even exceed the strong model working alone. I also connected the CLIs I commonly use into the same workbench, keeping the collaborative gains while preserving my original habits. If you are a heavy user of AI Agents, you are welcome to join me and raise a Qiling (器灵) of your own.
+Whichever route you pick, remember: **Choose exactly one route** — align the whole task to your current primary goal, rather than enabling all three or running all of them in turn.
 
 ## How it works
 
