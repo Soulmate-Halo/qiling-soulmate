@@ -22,14 +22,6 @@
 
 ---
 
-## What it is
-
-器灵 Soulmate (Soulmate) is a **local-first** AI programming assistant product. Instead of running one assistant at a time, it gathers several Agent CLIs into a single workbench — you pick, route, and observe them side by side, so one channel going down never takes the rest with it.
-
-Its core idea is simple: **strong models do the thinking, weak models do the legwork.** Strong models handle task decomposition, direction and final verification; weak models handle file reading, retrieval, repetitive execution and bulk output. A dedicated compression layer keeps the strong model's context small without losing precision.
-
-Soulmate runs as a desktop application and works directly on your machine, including browser automation via CDP / Selenium / Playwright.
-
 ## A note from the author
 
 I am an independent developer. The AI era gave me a lot of inspiration and made development unprecedentedly efficient; but the high subscription fees and API costs kept bothering me. Every time a new model appeared, I almost had to subscribe to another service, and the old subscription was soon left idle. I also deployed many models locally, but apart from being free, they struggled to be useful in real development work.
@@ -37,6 +29,14 @@ I am an independent developer. The AI era gave me a lot of inspiration and made 
 So I kept breaking down the differences between strong and weak models on tool calls, file reading and other metrics. In the end I reached a conclusion: **let the strong model be the brain — decomposing tasks, judging direction and doing final verification; let the weak model be the hands — file reading, retrieval, repetitive execution and bulk output.** I built this Agent CLI, and after countless rounds of testing and rule fixes, this collaboration finally worked.
 
 With the compression rules I designed — I call it 器灵压缩 (Qiling Compression) — the combination of main and collaborative models can greatly reduce the main model's consumption while keeping precision; in some tasks, speed and result quality even exceed the strong model working alone. I also connected the CLIs I commonly use into the same workbench, keeping the collaborative gains while preserving my original habits. If you are a heavy user of AI Agents, you are welcome to join me and raise a Qiling (器灵) of your own.
+
+## What it is
+
+器灵 Soulmate (Soulmate) is a **local-first** AI programming assistant product. Instead of running one assistant at a time, it gathers several Agent CLIs into a single workbench — you pick, route, and observe them side by side, so one channel going down never takes the rest with it.
+
+Its core idea is simple: **strong models do the thinking, weak models do the legwork.** Strong models handle task decomposition, direction and final verification; weak models handle file reading, retrieval, repetitive execution and bulk output. A dedicated compression layer keeps the strong model's context small without losing precision.
+
+Soulmate runs as a desktop application and works directly on your machine, including browser automation via CDP / Selenium / Playwright.
 
 ## Choose one route: Fast · Accurate · Economical
 
