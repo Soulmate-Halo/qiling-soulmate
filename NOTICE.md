@@ -2,9 +2,9 @@
 
 ## 品牌
 
-**器灵 Soulmate**（Qiling Soulmate）是器灵 Soulmate 团队的产品与品牌名称，官方网站为 <https://qiling.swcbg.com>。
+**器灵 Soulmate**（英文简称：Soulmate）是器灵 Soulmate 团队的产品与品牌名称，官方网站为 <https://qiling.swcbg.com>。
 
-本仓库内出现的一切「器灵 Soulmate」「Qiling Soulmate」及相关标识、文案，均为其版权所有者的商标与知识产权。
+本仓库内出现的一切「器灵 Soulmate」「Soulmate」及相关标识、文案，均为其版权所有者的商标与知识产权。
 
 ## 版权
 
@@ -20,7 +20,7 @@
 
 ## 商标使用提示
 
-未经权利人事先书面许可，请勿将「器灵 Soulmate」「Qiling Soulmate」用于任何可能造成混淆、暗示官方授权或贬损品牌的方式。在符合正常引用与评论的前提下，提及品牌应注明其所有权归权利人。
+未经权利人事先书面许可，请勿将「器灵 Soulmate」「Soulmate」用于任何可能造成混淆、暗示官方授权或贬损品牌的方式。在符合正常引用与评论的前提下，提及品牌应注明其所有权归权利人。
 
 ## 联系
 
