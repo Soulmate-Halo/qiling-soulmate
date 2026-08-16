@@ -86,19 +86,25 @@ Whichever route you pick, remember: **Choose exactly one route** — align the w
 
 The screenshots below are from real Xiaoyi (internal Qiling build) conversation interfaces. They show per-round cost comparisons on the **Economical** route, measured against direct use of the original CLI.
 
-### Case 1 · Short conversation
+### Case 1 · Five-turn brief conversation
+
+The entire conversation was only 5 rounds; in round 5, Qiling was outsourced 5 times (4 exploration tasks and 1 coding task) / 77 tool steps → this round dropped from **$58.068 to $8.504**, saving **85%**; cumulative conversation cost dropped from **$79.673 to $12.845**; cache hit rate was **98%**.
+
+![Five-turn brief conversation real savings case](assets/case-brief.png)
+
+### Case 2 · Short conversation
 
 A 37-round everyday-task conversation, round 32: Qiling outsourcing 1 time / 11 tool steps → this round dropped from **$64.351 to $9.210**, saving **86%**.
 
 ![Short conversation real savings case](assets/case-short.png)
 
-### Case 2 · Long conversation
+### Case 3 · Long conversation
 
 A 246-round large-project conversation, round 186: Qiling outsourcing 6 times (including 3 coding tasks) / 58 tool steps → this round dropped from **$271.624 to $21.957**, saving **92%**; cumulative conversation cost dropped from **$2,567.681 to $378.260**; cache hit rate was **98%**.
 
 ![Long conversation real savings case](assets/case-long.png)
 
-<small>Figures come from real ledger records. See the screenshot details for the savings breakdown: cache-read reuse, controlled backfill, and Qiling outsourcing.</small>
+<small>Figures come from real ledger records. See the screenshot details for the savings breakdown: cache-read reuse, controlled backfill, and Qiling outsourcing. All three screenshots are based on real ledger records and use Xiaoyi's end-of-round cost component; actual savings vary with task structure and are not a performance guarantee.</small>
 
 ## How it works
 
