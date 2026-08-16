@@ -1,16 +1,24 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
-> 内容版本 / Content versions: 内部内容通道 228 · Soulmate 内容通道 252
+> 内容版本 / Content versions: 内部内容通道 229 · Soulmate 内容通道 253
+> 发布日期 / Release date: 2026-08-16
 
 ## 中文
 
-- 修复轮末统计中「节省」信息缺失的问题：此前长任务一轮结束后只显示「本轮输入」与「原方案」两个相同数字，不显示节省文本。原因是「原方案」基线只计入了已归零的思考瘦身，没有计入受控历史替代全量历史重放带来的节省；本次将基线统一为与「对比原版命令行工具」相同口径（包含受控回填），并为估算用量的轮次补上节省细项，同时补齐另一条引擎链路缺失的统计入参。
+- 修复新建任务偶发未响应、看似假死的问题：会话工作副本物化、代码检查点快照和轮末三方合并落地这三处重 I/O 操作已改为分片异步执行，主进程消息泵不再被长时间独占。
+- 工作台轮末结算已与内部口径完全对齐：即使轮次尚未计价也会显示缓存命中率；命中率统一按「本轮命中缓存输入 ÷ 本轮总输入」计算，并保留节省细项。
 
 ## English
 
-- Restored the “savings” details in the end-of-turn statistics. After a long turn, “turn input” and “original approach” previously showed the same number and no savings text because the baseline counted only the now-zero reasoning-trimming component and omitted the savings from controlled history replacing full-history replay. The baseline now uses the same methodology as “compared with the original command-line tool,” including controlled backfill; estimated-usage turns also include the savings breakdown, and the missing statistics inputs are now supplied on the other engine path.
+- Fixed newly created tasks occasionally becoming unresponsive and appearing frozen. The three heavy-I/O stages—materializing the session worktree, taking code-checkpoint snapshots, and applying the end-of-turn three-way merge—now run asynchronously in chunks, so they no longer monopolize the main-process message pump.
+- Workbench end-of-turn accounting now fully matches the internal methodology. Cache hit rate is shown even for turns that have not yet been priced, is calculated consistently as “cached input hit this turn ÷ total input this turn,” and retains the savings breakdown.
 
 ## 历史版本 / Previous
+
+### 内部内容通道 228 · Soulmate 内容通道 252
+
+- 修复轮末统计中「节省」信息缺失的问题：此前长任务一轮结束后只显示「本轮输入」与「原方案」两个相同数字，不显示节省文本。原因是「原方案」基线只计入了已归零的思考瘦身，没有计入受控历史替代全量历史重放带来的节省；本次将基线统一为与「对比原版命令行工具」相同口径（包含受控回填），并为估算用量的轮次补上节省细项，同时补齐另一条引擎链路缺失的统计入参。
+- Restored the “savings” details in the end-of-turn statistics. After a long turn, “turn input” and “original approach” previously showed the same number and no savings text because the baseline counted only the now-zero reasoning-trimming component and omitted the savings from controlled history replacing full-history replay. The baseline now uses the same methodology as “compared with the original command-line tool,” including controlled backfill; estimated-usage turns also include the savings breakdown, and the missing statistics inputs are now supplied on the other engine path.
 
 ### 内部内容通道 227（未变更）· Soulmate 内容通道 251
 
