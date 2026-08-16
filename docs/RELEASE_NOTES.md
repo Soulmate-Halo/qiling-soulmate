@@ -1,5 +1,9 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v255 (2026-08-17)
+
+- 修复：工作台会话的成本结算现在按会话所选模型档位计价，Auto / GLM / GPT 等档位正确显示美元成本与节省对比；此前部分会话因引擎心跳模型名覆盖所选档位而显示"费率未知"。
+
 > 内容版本 / Content versions: 内部内容通道 230 · Soulmate 内容通道 254
 > 发布日期 / Release date: 2026-08-16
 
