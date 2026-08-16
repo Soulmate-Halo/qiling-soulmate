@@ -1,24 +1,29 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
-> 内容版本 / Content versions: 内部内容通道 227（本次未变更 / unchanged）· Soulmate 内容通道 251
+> 内容版本 / Content versions: 内部内容通道 228 · Soulmate 内容通道 252
 
 ## 中文
+
+- 修复轮末统计中「节省」信息缺失的问题：此前长任务一轮结束后只显示「本轮输入」与「原方案」两个相同数字，不显示节省文本。原因是「原方案」基线只计入了已归零的思考瘦身，没有计入受控历史替代全量历史重放带来的节省；本次将基线统一为与「对比原版命令行工具」相同口径（包含受控回填），并为估算用量的轮次补上节省细项，同时补齐另一条引擎链路缺失的统计入参。
+
+## English
+
+- Restored the “savings” details in the end-of-turn statistics. After a long turn, “turn input” and “original approach” previously showed the same number and no savings text because the baseline counted only the now-zero reasoning-trimming component and omitted the savings from controlled history replacing full-history replay. The baseline now uses the same methodology as “compared with the original command-line tool,” including controlled backfill; estimated-usage turns also include the savings breakdown, and the missing statistics inputs are now supplied on the other engine path.
+
+## 历史版本 / Previous
+
+### 内部内容通道 227（未变更）· Soulmate 内容通道 251
 
 - 工作台底部 Soulmates 指示器上的小灵魂图标，改用产品 LOGO 里的灵魂造型：原先是一个通用的幽灵轮廓，与品牌形象不一致；现在的图形直接由 LOGO 矢量化而来，圆头、右上开口缎带、两侧小卷须与菱形眼睛的特征全部保留。
 - 图标仍随运行状态变色：进行中为蓝色并保持原有呼吸动画，结束后转为灰色；悬停提示、点击展开详情、键盘可达性与无障碍标签一律不变。
 - 新图形按 24 像素画布重绘并补了极细描边，确保在 20 像素的实际显示尺寸下轮廓依然清晰。
 - 本次修改只涉及公开版渲染层的图标与其专属样式，内部内容通道的包里不存在这个指示器组件，因此按发布铁律「单包适用变更」登记为不适用，并已机器验证该通道内容版本保持 227、包内 75 个文件逐字节未变；不使用发布无变化版本的方式凑同步。
 - 本次更新的三渠道固定顺序为：**内部内容通道 → Soulmate 内容通道 → GitHub 公开仓库**；GitHub 保留此公开发布说明。
-
-## English
-
 - The soul icon on the Soulmates indicator at the bottom of the workbench now uses the soul shape from the product logo. It used to be a generic ghost outline that did not match the brand mark; the new shape is vectorized directly from the logo and keeps the round head, the open ribbon on the upper right, the two side curls and the diamond eyes.
 - The icon still reflects run state through color: blue with the existing breathing animation while running, grey once finished. Hover tooltips, click-to-expand details, keyboard access and accessibility labels are all unchanged.
 - The new glyph is redrawn on a 24-pixel canvas with a hairline stroke so the outline stays legible at the actual 20-pixel display size.
 - This change only touches the icon and its dedicated styles in the renderer of the public build; the internal content channel does not ship this indicator component, so it is recorded as not applicable under the "single-package change" release rule, with machine verification that the channel stays at content version 227 and all 75 packaged files are byte-for-byte unchanged. No no-op release is published just to pair the channels.
 - This update follows the fixed three-channel order: **internal content channel → Soulmate content channel → public GitHub repository**, with this public release note retained on GitHub.
-
-## 历史版本 / Previous
 
 ### 内部内容通道 227（未变更）· Soulmate 内容通道 250
 
