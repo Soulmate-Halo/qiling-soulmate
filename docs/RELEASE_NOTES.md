@@ -1,22 +1,29 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
-> 内容版本 / Content versions: 内部内容通道 227（本次未变更 / unchanged）· Soulmate 内容通道 250
+> 内容版本 / Content versions: 内部内容通道 227（本次未变更 / unchanged）· Soulmate 内容通道 251
 
 ## 中文
 
-- 修复工作台模式下长任务结束后不再显示「本轮节省信息」的问题：当一轮对话超过 10 分钟，界面会先自动解除忙碌状态，此后引擎迟到返回的结果被整个丢弃、会话不再重绘，于是本轮输入输出 token 与节省金额那一整块统计随之消失。
-- 现在迟到结果返回后会按当前活动会话做一次幂等重绘，从落库消息重新取回本轮统计，节省信息恢复正常显示；原有的 10 分钟超时提示文案保持不变，不会重复插入气泡，也不会把忙碌状态重新设回；用户已切换到其它会话时不做任何界面操作。
-- 本次修改只涉及公开版渲染层，内部内容通道的对应文件不含该超时分支、不存在此缺陷，因此按发布铁律「单包适用变更」登记为不适用，并已机器验证该通道内容版本保持 227、包内 75 个文件逐字节未变；不使用发布无变化版本的方式凑同步。
+- 工作台底部 Soulmates 指示器上的小灵魂图标，改用产品 LOGO 里的灵魂造型：原先是一个通用的幽灵轮廓，与品牌形象不一致；现在的图形直接由 LOGO 矢量化而来，圆头、右上开口缎带、两侧小卷须与菱形眼睛的特征全部保留。
+- 图标仍随运行状态变色：进行中为蓝色并保持原有呼吸动画，结束后转为灰色；悬停提示、点击展开详情、键盘可达性与无障碍标签一律不变。
+- 新图形按 24 像素画布重绘并补了极细描边，确保在 20 像素的实际显示尺寸下轮廓依然清晰。
+- 本次修改只涉及公开版渲染层的图标与其专属样式，内部内容通道的包里不存在这个指示器组件，因此按发布铁律「单包适用变更」登记为不适用，并已机器验证该通道内容版本保持 227、包内 75 个文件逐字节未变；不使用发布无变化版本的方式凑同步。
 - 本次更新的三渠道固定顺序为：**内部内容通道 → Soulmate 内容通道 → GitHub 公开仓库**；GitHub 保留此公开发布说明。
 
 ## English
 
-- Fixed the missing per-turn savings summary in workbench mode for long turns: when a turn ran past 10 minutes the UI released the busy state first, then discarded the late engine result entirely and never repainted the session, so the block showing this turn's input/output tokens and saved cost disappeared.
-- A late result now triggers one idempotent repaint of the active session and reloads the turn statistics from the persisted message, so the savings summary shows up again. The existing 10-minute timeout notice is unchanged, no duplicate bubble is inserted, the busy state is not restored, and nothing is repainted if the user already switched to another session.
-- This change only touches the renderer of the public build; the corresponding file in the internal content channel has no such timeout branch and is not affected, so it is recorded as not applicable under the "single-package change" release rule, with machine verification that the channel stays at content version 227 and all 75 packaged files are byte-for-byte unchanged. No no-op release is published just to pair the channels.
+- The soul icon on the Soulmates indicator at the bottom of the workbench now uses the soul shape from the product logo. It used to be a generic ghost outline that did not match the brand mark; the new shape is vectorized directly from the logo and keeps the round head, the open ribbon on the upper right, the two side curls and the diamond eyes.
+- The icon still reflects run state through color: blue with the existing breathing animation while running, grey once finished. Hover tooltips, click-to-expand details, keyboard access and accessibility labels are all unchanged.
+- The new glyph is redrawn on a 24-pixel canvas with a hairline stroke so the outline stays legible at the actual 20-pixel display size.
+- This change only touches the icon and its dedicated styles in the renderer of the public build; the internal content channel does not ship this indicator component, so it is recorded as not applicable under the "single-package change" release rule, with machine verification that the channel stays at content version 227 and all 75 packaged files are byte-for-byte unchanged. No no-op release is published just to pair the channels.
 - This update follows the fixed three-channel order: **internal content channel → Soulmate content channel → public GitHub repository**, with this public release note retained on GitHub.
 
 ## 历史版本 / Previous
+
+### 内部内容通道 227（未变更）· Soulmate 内容通道 250
+
+- 修复工作台模式下长任务结束后不再显示「本轮节省信息」的问题：一轮超过 10 分钟时迟到返回的结果会被整个丢弃、会话不再重绘，现在改为按当前活动会话做一次幂等重绘，统计恢复正常显示。
+- Fixed the missing per-turn savings summary in workbench mode for long turns: a result arriving after the 10-minute timeout used to be discarded without repainting the session, and now triggers one idempotent repaint of the active session so the statistics show up again.
 
 ### 内部内容通道 227（未变更）· Soulmate 内容通道 249
 
