@@ -1,19 +1,26 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
-> 内容版本 / Content versions: 内部内容通道 229 · Soulmate 内容通道 253
+> 内容版本 / Content versions: 内部内容通道 230 · Soulmate 内容通道 254
 > 发布日期 / Release date: 2026-08-16
 
-## 中文
+## 概要
 
-- 修复新建任务偶发未响应、看似假死的问题：会话工作副本物化、代码检查点快照和轮末三方合并落地这三处重 I/O 操作已改为分片异步执行，主进程消息泵不再被长时间独占。
-- 工作台轮末结算已与内部口径完全对齐：即使轮次尚未计价也会显示缓存命中率；命中率统一按「本轮命中缓存输入 ÷ 本轮总输入」计算，并保留节省细项。
+- 器灵引擎链路的轮末结算改用真实 token 计量:应用层现在读取引擎回合结果携带的会话累计用量(输入/输出/缓存读/缓存写),按会话差分得到本轮用量;个别取不到时回退为只读查询引擎本地数据库,仍取不到才沿用原估算口径。
+- 由此,工作台与聊天在器灵引擎上的轮末尾缀也能显示输入拆分(新输入+读缓存+写缓存)、缓存命中率、计价与节省细项,与内部分机同一口径;此前这些内容因该链路只有估算量而整块不显示。
 
 ## English
 
-- Fixed newly created tasks occasionally becoming unresponsive and appearing frozen. The three heavy-I/O stages—materializing the session worktree, taking code-checkpoint snapshots, and applying the end-of-turn three-way merge—now run asynchronously in chunks, so they no longer monopolize the main-process message pump.
-- Workbench end-of-turn accounting now fully matches the internal methodology. Cache hit rate is shown even for turns that have not yet been priced, is calculated consistently as “cached input hit this turn ÷ total input this turn,” and retains the savings breakdown.
+- End-of-turn settlement on the qiling engine path now uses real token usage: the app reads the session-cumulative usage (input / output / cache read / cache write) carried by the engine's turn result and derives per-turn numbers by diffing against the previous cumulative snapshot; when unavailable it falls back to a read-only query of the engine's local database, and only then to the previous estimation.
+- As a result, end-of-turn footers in both the workbench and chat now show the input breakdown (fresh input + cache read + cache write), cache hit rate, pricing and the savings breakdown on the qiling engine path, matching the internal methodology. Previously the whole block stayed hidden because that path only produced estimates.
 
 ## 历史版本 / Previous
+
+### 内部内容通道 229 · Soulmate 内容通道 253
+
+- 修复新建任务偶发未响应、看似假死的问题：会话工作副本物化、代码检查点快照和轮末三方合并落地这三处重 I/O 操作已改为分片异步执行，主进程消息泵不再被长时间独占。
+- 工作台轮末结算已与内部口径完全对齐：即使轮次尚未计价也会显示缓存命中率；命中率统一按「本轮命中缓存输入 ÷ 本轮总输入」计算，并保留节省细项。
+- Fixed newly created tasks occasionally becoming unresponsive and appearing frozen. The three heavy-I/O stages—materializing the session worktree, taking code-checkpoint snapshots, and applying the end-of-turn three-way merge—now run asynchronously in chunks, so they no longer monopolize the main-process message pump.
+- Workbench end-of-turn accounting now fully matches the internal methodology. Cache hit rate is shown even for turns that have not yet been priced, is calculated consistently as “cached input hit this turn ÷ total input this turn,” and retains the savings breakdown.
 
 ### 内部内容通道 228 · Soulmate 内容通道 252
 
