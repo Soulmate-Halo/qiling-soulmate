@@ -1,5 +1,12 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.18 (2026-08-19)
+
+- System-prompt posture patch for long-running tasks: no fixed step ceiling, strict two-condition turn end, no deciding on behalf of the user, truncated output must be declared and continued.
+- 50-step steer reminder: every 50 tool calls the engine injects a continue-or-finish prompt so long tasks do not stall mid-way.
+- Empty-reply fallback hint: when the model returns nothing, the UI shows an actionable fallback-model suggestion instead of a blank bubble.
+- Content versions: internal channel 252; Soulmate channel 268.
+
 ## v2.3.17 (2026-08-19)
 
 - 器灵详情弹层改为聊天流式对话框：任务、过程、终态交付三条气泡，样式对齐主界面消息气泡。
