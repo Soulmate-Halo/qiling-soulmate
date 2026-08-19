@@ -1,5 +1,13 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.19 (2026-08-19)
+
+- 修复器灵详情对话界面宽度塌缩导致中文逐字竖排的问题。
+- 详情对话改为覆盖聊天栏的单列对话流：任务右对齐，器灵过程和结果左对齐。
+- 消息行全宽，气泡采用响应式 `min-width`/`max-width`；240/320/560/960 窗口均能正常换行。
+- 详情区使用单滚动容器，打开时定位末尾，事件按顺序秒级追加。
+- 内容版本：内部通道 253；Soulmate 通道 269。
+
 ## v2.3.18 (2026-08-19)
 
 - System-prompt posture patch for long-running tasks: no fixed step ceiling, strict two-condition turn end, no deciding on behalf of the user, truncated output must be declared and continued.
