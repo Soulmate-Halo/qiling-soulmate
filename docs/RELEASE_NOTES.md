@@ -1,5 +1,13 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.20 (2026-08-20)
+
+- GLM-5.3 长任务续跑补丁新增验收降级禁令：计划中的实测步骤未执行时，不得用静态推断替代并宣告完成。
+- Codex CLI 检测改为即时合并 Windows User/Machine 注册表 PATH 与当前进程 PATH，安装后无需重启小易即可重新发现。
+- 补齐 WinGet Links、Volta 与 Scoop shims 常见安装目录；继续排除无法直接 spawn 的 `.ps1`。
+- 内部通道 c256 已具备同等检测能力，本次保持不变；Soulmate 通道由 c270 同步到 c271。
+- Content versions: internal 256 (unchanged); Soulmate 271.
+
 ## v2.3.19 (2026-08-19)
 
 - 修复器灵详情对话界面宽度塌缩导致中文逐字竖排的问题。
