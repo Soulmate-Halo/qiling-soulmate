@@ -1,5 +1,12 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.25 (2026-08-21)
+
+- Soulmate 通道 274：器灵调用可靠性四件移植（对齐内部小易线 c257/c258 系列改造）。
+- ①终态兜底（c258-B）：run 落终态时若无 result.json，自动由 partial 与状态合成兜底回执，杜绝零产出空手而归；②周期快照与步数上限（c258-C）：工具步每 15 步覆盖写 partial.txt，新增 --max-steps 参数并经 XY_MAX_TOOL_LOOPS 透传到运行时；③自述回执（c258-E）：台账与收件箱行自带 result.json/partial.txt 有无、状态与下一步建议，主模型不回读即可决策；④软着陆（c257）：60 步硬顶由抛错中断改为软着陆收尾，产物照常落盘。
+- 变更文件 4 个：subagent-agent-worker.js、subagent-runs.js、subagent.js、cursor-local-runtime/runtime.js；其余 78 文件与线上 273 逐字节一致。
+- 内容版本：Soulmate 通道 274；内部通道保持 260（该线为四项改造的来源，早已包含，无需变更）。
+
 ## v2.3.24 (2026-08-21)
 
 - 修复内部通道 259 版本号相撞事故：两条工作线同日均以 259 号发布——渠道 Key 面板修复（renderer.js）与 Codex 下载断点续传（codex-bundled-install.js），后者的包与清单覆盖了前者，线上 renderer 退回 c258、渠道 Key 面板修复丢失。
