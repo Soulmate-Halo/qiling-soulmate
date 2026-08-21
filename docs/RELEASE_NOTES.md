@@ -1,5 +1,12 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.26 (2026-08-21)
+
+- Soulmate 通道 275：新增"游客模式"（方案乙·游客即真实账号）。登录页验证码下方新增游客模式按钮，点击调用服务端 POST /api/fenji/guest/register，按设备号自动创建游客账号并签发正式登录 token，随后走与手机号登录完全一致的落库与进入流程；游客账号权限暂时等同注册用户，可使用全部内置模型。
+- 客户端变更 6 文件：src/main/main-real.js（新增 auth:anon-register IPC handler）、src/main/preload.js（暴露 anonRegister）、src/main/auth.js（新增 registerAnon，复用 saveAuthSession）、src/renderer/renderer.js（游客按钮改走注册接口、去除匿名档门）、src/renderer/index.html（游客按钮常显）、config/default.json（新增 anonRegisterUrl）；其余 76 文件与线上 274 逐字节一致。
+- 服务端（生产网关，非内容包）：serve9 beta 网关新增 POST /api/fenji/guest/register（复用 register_otp_user + create_session，账号以 guest: 前缀标记便于后续限流），serve7 统一鉴权层白名单放行该路径。serve9 由基线 beta-20260813090507 + 增量部署为 beta-20260821142728，公网冒烟游客建号→token→模型调用全链路 5/5 PASS。
+- 内容版本：Soulmate 通道 275；内部通道保持 260。
+
 ## v2.3.25 (2026-08-21)
 
 - Soulmate 通道 274：器灵调用可靠性四件移植（对齐内部小易线 c257/c258 系列改造）。
