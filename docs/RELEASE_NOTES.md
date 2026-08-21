@@ -1,5 +1,11 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.24 (2026-08-21)
+
+- 修复内部通道 259 版本号相撞事故：两条工作线同日均以 259 号发布——渠道 Key 面板修复（renderer.js）与 Codex 下载断点续传（codex-bundled-install.js），后者的包与清单覆盖了前者，线上 renderer 退回 c258、渠道 Key 面板修复丢失。
+- 内部通道 260 为合成修复包：renderer.js 取回渠道 Key 面板修复版（验证按钮常驻状态标记＋模型缓存失效重拉），codex-bundled-install.js 保留断点续传版，其余 76 文件与线上 259 逐字节一致。
+- 内容版本：内部通道 260；Soulmate 通道保持 273（该线不含上述两处文件的相撞，无需变更）。
+
 ## v2.3.23 (2026-08-21)
 
 - Auto 模型改为按优先级聚合兜底：第一优先走 Ornith-1.5-35B-A3B 专用路由，该路由不可用时自动整体切换到原 auto 网关别名，由网关侧继续走 composer-2.5-fast、grok-4.5-fast-xhigh、DeepSeek V4 Flash 的既有兜底链。
