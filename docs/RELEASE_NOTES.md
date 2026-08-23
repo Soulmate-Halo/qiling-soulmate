@@ -1,5 +1,11 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.28 (2026-08-23)
+
+- Soulmate 通道 277：全界面中英双语（Full bilingual UI）。登录界面右上角新增「中文 / EN」语言切换开关，选择写入 localStorage（ql_lang）并在重启后保持；界面按钮、提示、菜单、托盘、弹窗与状态文本全部支持英文，双语字典 1561 键；主进程原生弹窗/菜单经 config.ui.locale 持久化与 IPC 桥同步切换。
+- 客户端变更 8 文件：新增 src/renderer/i18n.js（双语基础设施：EN 字典、t(s,params) 占位模板、getLang/setLang、applyStaticDom、CommonJS 双端兼容）；改动 src/renderer/index.html（189 处 data-i18n 标记+语言开关）、src/renderer/renderer.js（约 1047 处动态文案包 t()）、src/main/main-real.js（tMain+语言持久化）、src/main/personality.js、src/main/savings-config.js、src/renderer/floating.html、src/renderer/snip.html；其余 75 文件与线上 276 逐字节一致。
+- 内容版本：Soulmate 通道 277；内部通道保持 260。
+
 ## v2.3.27 (2026-08-22)
 
 - Soulmate 通道 276：启动提速——首屏不再等网关与后台杂务。删除启动自检中的公网网关判活步骤（原 8 秒×3 次重试、最坏阻塞首屏约 26 秒；网关不通时发消息会自然报错，无需启动时预先探测）；技能内容部署与常驻定时任务网关两步挪出首屏，改为进入界面后后台执行，失败仅记日志不影响使用。
