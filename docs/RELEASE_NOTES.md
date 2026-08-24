@@ -1,5 +1,11 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.29 (2026-08-24)
+
+- Soulmate 通道 278：紧急热修——修复 277 引入的渲染层启动卡死。renderer.js:262 的 `const t = uiMode === 'code' ? t('新建项目') : t('新对话')` 存在 const 自引用 TDZ，渲染层脚本加载即抛 ReferenceError，启动遮罩「正在启动器灵Soulmate，请稍候…」永不消失（主进程存活正常）。修复为局部变量 label，连环改 lab.textContent = label，共 1 函数 2 行；其余 82 文件与 277 逐字节一致。
+- 验收升级：总验收 45/45 PASS，新增渲染层运行时验收——提取 applyUiMode 源码段在注入假全局的沙箱实跑（code+chat 双模式），确认不再抛 ReferenceError；此前 277 的 node --check 只查语法、放行了运行时 TDZ，此缺口已补。
+- 内容版本：Soulmate 通道 278；内部通道保持 260。已装 277 的卡死机器下次启动将自动下载 278 并恢复。
+
 ## v2.3.28 (2026-08-23)
 
 - Soulmate 通道 277：全界面中英双语（Full bilingual UI）。登录界面右上角新增「中文 / EN」语言切换开关，选择写入 localStorage（ql_lang）并在重启后保持；界面按钮、提示、菜单、托盘、弹窗与状态文本全部支持英文，双语字典 1561 键；主进程原生弹窗/菜单经 config.ui.locale 持久化与 IPC 桥同步切换。
