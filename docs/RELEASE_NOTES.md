@@ -1,5 +1,13 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.31 (2026-08-25)
+
+- Soulmate 通道 280：用 AST 作用域分析彻底清除 277 双语化遗留的 `t` 遮蔽缺陷。278 修 1 处、279 修 16 处均为人工/正则排查，仍漏掉 5 个作用域共 25 个调用点：`renderer.js:90 for (const t of runTimers.values())`、`1832 const t = autoTimers.get(sid)`、`2480 const t = String(text||'').trim()`、`2746 for (const t of (a.tools||[]))`、`2821 turns.forEach((t, idx) =>`。其中 2746 属 `deriveClueHard`、2821 属 `renderClueIndex`，位于 `renderMessages` 尾部（2704 行）必经路径：工作台模式打开任何含工具卡的历史会话即抛 `TypeError: t is not a function`，`scrollChat` 与会话重绑定不再执行，表现为「对话弹出空白」；1832 另在 `openTimer` 触发 `ReferenceError: Cannot access 't' before initialization`（1830 行 toast 调用位于 const 声明之前，命中 TDZ）。
+- 修法：acorn 建作用域树，把 5 个遮蔽绑定的 56 处对象属性访问引用改名为 `tm`/`at`/`txt`/`tool`/`turn`，25 处 `t('中文')` 翻译调用一律保留指向全局 `t()`，全局翻译函数定义不动；其余 82 个文件与 279 逐字节一致。
+- 验收 42/42 PASS，新增三层守护：① 全量 AST 作用域扫描（280 与 276 基线同为 A 类冲突 0，并反证 277=60、278=51、279=25，证明扫描器对已知缺陷敏感）；② 假 DOM 整文件实加载后实调 18 个受影响函数（279 上 `openTimer`、`deriveClueHard` 必崩，280 上 18/18 通过）；③ i18n 覆盖体检（895 个 `t()` key 在 1555 条 EN 字典中命中率 100%）。
+- 同时修正 manifest `notes` 字段编码缺陷：此前 notes 源文件为 GBK 却被按 UTF-8 读入，线上 `content-latest.json` 的 notes 中文全为乱码；本版起 notes 源文件统一 UTF-8 无 BOM，线上实测无替换字符。
+- 内容版本：Soulmate 通道 280；内部通道保持 260。已装 278/279 的机器下次启动自动升到 280 即恢复。
+
 ## v2.3.30 (2026-08-25)
 
 - Soulmate 通道 279：紧急热修——修复「对话弹出空白」。278 只修了 renderer.js:262 一处 TDZ，全文件仍残留 10 个局部变量/函数参数名为 `t` 的作用域（toolWhenHtml、runBtnHtml、runTimerAction、refreshTimerBtn、fmtClock 等），其作用域内又调用全局翻译函数 `t('…')`：渲染历史会话遇到工具卡即抛 `TypeError: t is not a function`，且异常发生在清空旧消息之后，聊天区整片空白。修复：10 个作用域内局部 `t` 改名 `tm`/`tree`/`card`/`ts`/`sum`/`tagEl`/`lockEl`（16 处精准替换），其余 82 文件与 278 逐字节一致。
