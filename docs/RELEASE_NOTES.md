@@ -1,5 +1,11 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.30 (2026-08-25)
+
+- Soulmate 通道 279：紧急热修——修复「对话弹出空白」。278 只修了 renderer.js:262 一处 TDZ，全文件仍残留 10 个局部变量/函数参数名为 `t` 的作用域（toolWhenHtml、runBtnHtml、runTimerAction、refreshTimerBtn、fmtClock 等），其作用域内又调用全局翻译函数 `t('…')`：渲染历史会话遇到工具卡即抛 `TypeError: t is not a function`，且异常发生在清空旧消息之后，聊天区整片空白。修复：10 个作用域内局部 `t` 改名 `tm`/`tree`/`card`/`ts`/`sum`/`tagEl`/`lockEl`（16 处精准替换），其余 82 文件与 278 逐字节一致。
+- 验收升级：总验收 54/54 PASS，新增两层守护——① 静态全量扫描（任何定义局部 t 的作用域内不得再调用 t('…')，冲突=0）；② 全量 renderer 运行时加载探针（注入假 DOM 整文件 eval 后实调 4 个原崩溃函数，修复前 toolWhenHtml 必抛 TypeError）。
+- 内容版本：Soulmate 通道 279；内部通道保持 260。已装 278 的机器下次启动将自动下载 279 并恢复。
+
 ## v2.3.29 (2026-08-24)
 
 - Soulmate 通道 278：紧急热修——修复 277 引入的渲染层启动卡死。renderer.js:262 的 `const t = uiMode === 'code' ? t('新建项目') : t('新对话')` 存在 const 自引用 TDZ，渲染层脚本加载即抛 ReferenceError，启动遮罩「正在启动器灵Soulmate，请稍候…」永不消失（主进程存活正常）。修复为局部变量 label，连环改 lab.textContent = label，共 1 函数 2 行；其余 82 文件与 277 逐字节一致。
