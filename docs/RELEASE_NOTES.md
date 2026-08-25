@@ -1,5 +1,13 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.32 (2026-08-25)
+
+- Soulmate 内容通道 281：会话存储改为元数据缓存、分片与按需读取；大量会话启动时不再同步加载全部历史正文。
+- 会话列表增量渲染并按时间分组折叠；历史消息、超长会话与工具卡按需展开，降低长会话首屏开销。
+- 启动链增加慢启动进度与持续上报；渲染层 45 秒看门狗提供“强制重启”和“跳过等待”两个自救出口。
+- 验收覆盖 280 的 42 项历史守护、全量 AST 作用域扫描、假 DOM 运行时探针、双语 i18n 覆盖及逐文件 SHA-256 零污染对账。
+- 内容版本：Soulmate 通道 281；内部通道保持 260。
+
 ## v2.3.31 (2026-08-25)
 
 - Soulmate 通道 280：用 AST 作用域分析彻底清除 277 双语化遗留的 `t` 遮蔽缺陷。278 修 1 处、279 修 16 处均为人工/正则排查，仍漏掉 5 个作用域共 25 个调用点：`renderer.js:90 for (const t of runTimers.values())`、`1832 const t = autoTimers.get(sid)`、`2480 const t = String(text||'').trim()`、`2746 for (const t of (a.tools||[]))`、`2821 turns.forEach((t, idx) =>`。其中 2746 属 `deriveClueHard`、2821 属 `renderClueIndex`，位于 `renderMessages` 尾部（2704 行）必经路径：工作台模式打开任何含工具卡的历史会话即抛 `TypeError: t is not a function`，`scrollChat` 与会话重绑定不再执行，表现为「对话弹出空白」；1832 另在 `openTimer` 触发 `ReferenceError: Cannot access 't' before initialization`（1830 行 toast 调用位于 const 声明之前，命中 TDZ）。
