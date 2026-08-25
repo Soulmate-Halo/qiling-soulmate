@@ -1,5 +1,13 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.33 (2026-08-25)
+
+- Soulmate 内容通道 282：进程归属同时识别 subagent.js 与 subagent-agent-worker.js，清扫和手动终止不再漏掉 worker。
+- 看门狗 startup、grace、proc-hard 在命令行、原始 argv 与配置入口统一执行秒/毫秒纠正。
+- out.log 与 err.log 读取增加 UTF-8/GBK 智能解码，保持裸文件描述符写入与 detached 续写能力。
+- 收件箱回执支持终态后迟到的 steps/outChars 回填，并以 PATCH1～PATCH4 行为测试和精确差异清单验收。
+- 内容版本：Soulmate 通道 282；内部通道保持 260。
+
 ## v2.3.32 (2026-08-25)
 
 - Soulmate 内容通道 281：会话存储改为元数据缓存、分片与按需读取；大量会话启动时不再同步加载全部历史正文。
