@@ -1,5 +1,11 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
 
+## v2.3.41 (2026-08-29)
+
+- 内部桌面内容通道 295：聚合画布调度模型新增 redispatch 动作，并在卡住时走自动诊断重派链。
+- 改动 pipeline-runner / pipeline-chat / pipeline-supervisor / main-real 四个文件；83 文件零增减。
+- 内容版本：内部 295；Soulmate 通道保持 287。
+
 ## v2.3.40 (2026-08-29)
 
 - 内部桌面内容通道 294：修复器灵合法交还后主聊天仍不结束的问题；包装层只等待直接子进程，不再被脱离后代持续占住。
