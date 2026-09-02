@@ -1,4 +1,10 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
+## v2.3.40（内容版本 291 · 2026-09-02）
+
+修复用户反馈的高发 600S 无输出自动结束乌龙：看门狗把模型思考、调用工具、等待子代理返回误判为引擎无响应而强制收轮。本版两处引擎修复：acp-client.js 的 keepAlive 空闲判据增加 running（进程存活即续命）、_onData 收到任何 stdout 数据立即重置超时；cursor-agent.js 的 watchdogDecision 新增 procAlive 进程存活维度。基线 289 之上改 src/main/acp-client.js、src/main/cursor-agent.js 两个文件（本版同时带上 src/renderer/renderer.js 的输入框焦点修复工程）。
+
+---
+
 
 ## v2.3.38（内容版本 289 · 2026-08-31）
 
