@@ -14,8 +14,13 @@
 </p>
 
 <p align="center">
-  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/QilingSoulmate-PublicBeta-Setup-latest.exe"><img alt="下载 Windows 安装包 / 最新公测版" src="https://img.shields.io/badge/%E4%B8%8B%E8%BD%BD%20Windows%20%E5%AE%89%E8%A3%85%E5%8C%85-%E6%9C%80%E6%96%B0%E5%85%AC%E6%B5%8B%E7%89%88-0078D4?style=for-the-badge&amp;logo=windows11&amp;logoColor=white" /></a><br />
-  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/latest.yml">Windows 最新公测版</a>
+  <a href="https://github.com/Soulmate-Halo/qiling-soulmate/releases/latest"><img alt="从 GitHub Releases 下载 Windows 安装包" src="https://img.shields.io/badge/GitHub%20Releases-%E4%B8%8B%E8%BD%BD-0078D4?style=for-the-badge&amp;logo=windows11&amp;logoColor=white" /></a>
+  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/QilingSoulmate-PublicBeta-Setup-latest.exe"><img alt="官方镜像" src="https://img.shields.io/badge/%E5%AE%98%E6%96%B9%E9%95%9C%E5%83%8F-%E5%90%8C%E4%B8%80%E6%96%87%E4%BB%B6-0E7C66?style=for-the-badge" /></a><br />
+  <a href="https://github.com/Soulmate-Halo/qiling-soulmate/releases/download/v2.3.11/QilingSoulmate-PublicBeta-Setup-2.3.11.exe">GitHub Releases · v2.3.11 安装包</a>
+  ·
+  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/QilingSoulmate-PublicBeta-Setup-latest.exe">官方镜像</a>
+  ·
+  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/latest.yml">latest.yml</a>
 </p>
 
 <p align="center">
