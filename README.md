@@ -14,8 +14,13 @@
 </p>
 
 <p align="center">
-  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/QilingSoulmate-PublicBeta-Setup-latest.exe"><img alt="Download for Windows / Latest Public Beta" src="https://img.shields.io/badge/Download%20for%20Windows-Latest%20Public%20Beta-0078D4?style=for-the-badge&amp;logo=windows11&amp;logoColor=white" /></a><br />
-  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/latest.yml">Latest Windows public beta</a>
+  <a href="https://github.com/Soulmate-Halo/qiling-soulmate/releases/latest"><img alt="Download for Windows / GitHub Releases" src="https://img.shields.io/badge/Download%20for%20Windows-GitHub%20Releases-0078D4?style=for-the-badge&amp;logo=windows11&amp;logoColor=white" /></a>
+  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/QilingSoulmate-PublicBeta-Setup-latest.exe"><img alt="Official mirror" src="https://img.shields.io/badge/Official%20mirror-same%20file-0E7C66?style=for-the-badge" /></a><br />
+  <a href="https://github.com/Soulmate-Halo/qiling-soulmate/releases/download/v2.3.11/QilingSoulmate-PublicBeta-Setup-2.3.11.exe">GitHub Releases · v2.3.11 installer</a>
+  ·
+  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/QilingSoulmate-PublicBeta-Setup-latest.exe">Official mirror</a>
+  ·
+  <a href="https://webcon.swcbg.com/qiling-soulmate-beta-update/latest.yml">latest.yml</a>
 </p>
 
 <p align="center">
