@@ -5,7 +5,7 @@
 <h1 align="center">器灵 Soulmate</h1>
 
 <p align="center">
-  <strong>Strong models as the brain, weak models as the hands — multiple Agent CLIs in one workbench.</strong><br />
+  <strong>The main model sets direction; Qiling shares the execution. Costs and task progress stay visible.</strong><br />
   Choose one: fast, accurate, or economical.
 </p>
 
@@ -29,6 +29,35 @@
   <a href="https://github.com/Soulmate-Halo/qiling-soulmate/issues">Issues</a> ·
   <a href="https://github.com/Soulmate-Halo/qiling-soulmate/discussions">Discussions</a>
 </p>
+
+<p align="center">
+  <img src="assets/showcase/workspace.png" alt="器灵 Soulmate workbench overview" width="100%" />
+</p>
+
+| Cost control | Task delegation | Clue stream |
+| --- | --- | --- |
+| Reuse cache, retrieve history on demand, and inspect cost breakdowns. | Delegate exploration and coding separately, set concurrency, and keep final review with the main model. | Follow each round's conclusions and milestones throughout long tasks. |
+
+<p><small>Captured from the real desktop client. The workbench and clue stream use public demo content, not a real task execution record. The savings cases below retain their recorded accounting basis.</small></p>
+
+## Screenshots
+
+<table>
+<tr>
+<td width="35%"><strong>Cost control: spend less on repeated context</strong><p>Configure stable-prefix caching and controlled history retrieval separately. Keep full history available on demand, with estimated savings and quality tradeoffs shown per strategy.</p></td>
+<td><img src="assets/showcase/cost-control.png" alt="Real client: stable-prefix cache and controlled history settings" width="600" /></td>
+</tr>
+<tr>
+<td><strong>Task delegation: direction from the main model, execution from Qiling</strong><p>Enable delegation for exploration and coding separately, and set concurrency per session. Keep decisions, synthesis, and final verification with the main model.</p></td>
+<td><img src="assets/showcase/task-delegation.png" alt="Real client: exploration, coding delegation, and concurrency settings" width="600" /></td>
+</tr>
+<tr>
+<td><strong>Clue stream: keep track of long tasks</strong><p>Follow requirements, progress, and conclusions by round. Milestones and useful clues help locate the important decisions without rereading an entire conversation.</p><p><small>Public demo content; a close-up of the clue panel.</small></p></td>
+<td align="center"><img src="assets/showcase/clue-stream.png" alt="Public demo: clue index, milestones, and useful nodes" width="280" /></td>
+</tr>
+</table>
+
+<small>Percentages in the settings are estimates or historical ranges for different scopes. They cannot be added together and are not a savings guarantee. See the recorded 5-, 37-, and 246-round cases below for cost comparisons.</small>
 
 ---
 

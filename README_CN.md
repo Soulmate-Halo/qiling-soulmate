@@ -5,7 +5,7 @@
 <h1 align="center">器灵 Soulmate</h1>
 
 <p align="center">
-  <strong>强模型做大脑，弱模型做手脚；多家 Agent CLI，收进同一个工作台。</strong><br />
+  <strong>主模型定方向，器灵分担执行；费用和任务进展看得见。</strong><br />
   三选一：要么快，要么准，要么省。
 </p>
 
@@ -29,6 +29,35 @@
   <a href="https://github.com/Soulmate-Halo/qiling-soulmate/issues">Issues</a> ·
   <a href="https://github.com/Soulmate-Halo/qiling-soulmate/discussions">Discussions</a>
 </p>
+
+<p align="center">
+  <img src="assets/showcase/workspace.png" alt="器灵 Soulmate 工作台全景" width="100%" />
+</p>
+
+| 成本控制 | 任务分配 | 右侧线索流 |
+| --- | --- | --- |
+| 用缓存复用、按需回填与费用明细，看清消耗与节省来源。 | 探索与写码分别交给器灵，控制并发数量，主模型负责验收。 | 按轮次整理关键结论，标记里程碑，长任务也方便回看。 |
+
+<p><small>截图来自真实客户端。工作台全景与线索流使用公开演示内容，不代表一次真实任务的执行记录；下方费用案例保留真实台账口径。</small></p>
+
+## 界面截图
+
+<table>
+<tr>
+<td width="35%"><strong>成本控制：少重复读取，多保留关键判断</strong><p>稳定前缀缓存与受控历史回填分别可调，历史正文保留，需要时再读取。各项策略显示估算范围与质量取舍。</p></td>
+<td><img src="assets/showcase/cost-control.png" alt="真实客户端：稳定前缀缓存与受控历史回填设置" width="600" /></td>
+</tr>
+<tr>
+<td><strong>任务分配：主模型定方向，器灵分担执行</strong><p>探索与代码撰写可分别启用器灵；设置单会话并发上限。主模型集中处理取舍、汇总与最终验收。</p></td>
+<td><img src="assets/showcase/task-delegation.png" alt="真实客户端：探索、写码外包与并发数量设置" width="600" /></td>
+</tr>
+<tr>
+<td><strong>右侧线索流：长任务也有清楚的来路</strong><p>按轮次串起需求、进展和结论，通过里程碑与有用线索定位关键节点，减少来回翻找。</p><p><small>公开演示内容；截图为线索面板局部。</small></p></td>
+<td align="center"><img src="assets/showcase/clue-stream.png" alt="公开演示：右侧线索索引、里程碑与有用节点" width="280" /></td>
+</tr>
+</table>
+
+<small>设置图中的百分比是对应策略的估算或历史区间，统计范围各不相同，不能直接相加，也不构成收益保证。真实费用对比见下方 5 轮、37 轮与 246 轮案例。</small>
 
 ---
 
