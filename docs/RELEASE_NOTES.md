@@ -1,4 +1,12 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
+## v2.3.53（内容版本 304 · 2026-10-06）
+
+- 异构GPU 入口从「三选一」卡片调整为顶栏按钮组（本地检测 / SSH 探测）：点击后交给当前会话 AI 自驱执行；SSH 输入改为原样文本透传，支持自然语言描述（IP、端口、用户名、口令、密钥路径等），不再做 user@host[:port] 格式校验（hetero-gpu-ui.js、hetero-gpu.css、hetero-gpu.js）。
+- 本次为内容热更新，安装壳版本仍为 2.3.11；安装后通过同一内容更新通道获取版本 304。
+
+---
+
+
 ## v2.3.52（内容版本 303 · 2026-10-06）
 
 - 异构GPU 入口改为「三选一」卡片：进入异构GPU工作台后，聊天区给出「SSH远程搭建 / 本地搜索硬件搭建 / 自定义」三选一；选定后由 AI 自驱按 11 步流水线执行（定方案 → 模型及环境下载 → 搭建 → 探针 → 算账 → 拓扑比选 → 启动服务 → 健康门禁 → 压测门禁 → 指纹采集 → 回写方案库），右侧竖向进度面板按 hetero-status.json 实时展示每步状态（hetero-gpu-ui.js、hetero-gpu.css、hetero-gpu.js、preload.js、renderer.js）。
