@@ -1,4 +1,14 @@
 # 内容热更新发布说明 / Content Hot Update Release Note
+## v2.3.51（内容版本 302 · 2026-10-06）
+
+- 修复输入框不弹光标：浏览器工具回调不再无条件抢占主窗焦点（main-real.js 两处工具回调加 guard），登出后登录页主窗与 webContents 重新聚焦，手机号输入框 rAF 加短重试可重入聚焦（renderer.js）。
+- 修复器灵对话内工具全部报 t.toBinary is not a function：cursor-local-runtime/runtime.js 新增 makeExecArgs 统一包装工具入参，工具调用恢复可用。
+- 异构GPU改为工作台形态：点击入口先弹窗选择/确认 GPU 工作文件夹（默认「文档\异构GPU任务N」，可浏览），确认后建文件夹并新建绑定它的工作台会话（序号递增）切入；右侧线索索引隐藏，改为竖向八步进度面板，顶部本地检测/SSH检测/开始自检/停止四个按钮全部接通；UI 卡片化美化（hetero-gpu-ui.js、hetero-gpu.js、preload.js、index.html、hetero-gpu.css、renderer.js）。
+- 本次为内容热更新，安装壳版本仍为 2.3.11；安装后通过同一内容更新通道获取版本 302。
+
+---
+
+
 ## v2.3.50（内容版本 301 · 2026-10-06）
 
 - 修复异构GPU入口按钮点击无响应：事件监听从 window 改挂到 document，与派发方同源，点击入口即可按顺序新建并打开「异构GPU任务N」会话，会话卡片内八步进度逐项回显。
